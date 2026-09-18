@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Pretendard 웹 폰트 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    
+    <!-- Termina 어도비 웹 폰트 추가 -->
+    <link rel="stylesheet" href="https://use.typekit.net/jee5tlu.css">
+
+
+
     <style>
         body { font-family: 'Pretendard', sans-serif; overflow-x: hidden; }
         
@@ -49,6 +53,36 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+
+        /* 히어로 배경 이미지 슬라이드 */
+        @keyframes heroSlideDog {
+            0% { opacity: 1; }
+            35% { opacity: 1; }
+            50% { opacity: 0; }
+            85% { opacity: 0; }
+            100% { opacity: 1; }
+            }
+
+         @keyframes heroSlideCat {
+            0% { opacity: 0; }
+            35% { opacity: 0; }
+            50% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { opacity: 0; }
+            }
+
+        .hero-slide-dog {
+            animation: heroSlideDog 6s infinite ease-in-out;
+        }
+
+        .hero-slide-cat {
+            animation: heroSlideCat 6s infinite ease-in-out;
+        }
+
+
+
+
     </style>
     <!-- ========================================================================== -->
     <!-- 🚨 [공통 디자인 & 필수 설정 라이브러리 - 절대 수정 금지 구역] END -->
@@ -61,42 +95,133 @@
     <!-- 담당 영역: 상단 네비게이션 & 섹션 1 (히어로 배너) -->
     <!-- 주의: 상위 감싸는 태그의 'reveal fade-in-up' 클래스를 유지해야 효과가 동작합니다. -->
     <!-- ========================================================================== -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 to-sky-100 -z-10"></div>
-        <div class="container mx-auto px-6 lg:flex lg:items-center lg:gap-12 max-w-6xl">
-            <div class="lg:w-1/2 text-center lg:text-left reveal fade-in-up">
-                <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold mb-4">반려동물 케어의 새로운 기준</span>
-                <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6 tracking-tight">
-                    설명 없는 안심 체크인, <br>
-                    <span class="text-gradient">펫 케어 패스포트</span>
-                </h1>
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed">의료 기록부터 돌봄 일지까지 하나의 QR에 담았습니다.<br>이제 호텔이나 유치원, 미용실에 맡길 때마다 길게 설명하지 마세요.</p>
-            </div>
+    
+    <section id="hero" class="relative min-h-screen overflow-hidden bg-slate-800 text-white">
+
+        <!-- 배경 이미지 -->
+        <div class="
+        absolute inset-0
+        bg-[url('https://images.unsplash.com/photo-1552053831-71594a27632d')]
+        bg-cover
+        bg-[center_52%]
+        hero-slide-dog">
+        </div>
+    
+        <div class="
+        absolute inset-0
+        bg-[url('https://images.unsplash.com/photo-1592194996308-7b43878e84a6')]
+        bg-cover
+        bg-[center_52%]
+        hero-slide-cat">
+        </div>
+    
+        <div class="absolute inset-0 bg-black/35 z-10"></div>
+        
+        
+        <!-- 상단 네비게이션 -->
+        <header class="absolute top-0 left-0 z-30 w-full">
+        <nav class="container mx-auto px-6 max-w-6xl h-20 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-extrabold tracking-tight text-white hover:bg-gradient-to-r hover:from-blue-500 hover:to-violet-400 hover:bg-clip-text hover:text-transparent transition-all duration-300">
+            </a>
+        
+               <ul class="flex gap-4 sm:gap-6 md:gap-10 text-xs sm:text-sm font-semibold text-white/90">
+    
+                    <li><a href="#process-and-card" class="hover:text-violet-300 transition-colors">Passport</a></li>
+                    <li><a href="#records" class="hover:text-violet-300 transition-colors">Care Record</a></li>
+                    <li><a href="#features-and-mascot" class="hover:text-violet-300 transition-colors">Reports</a></li>
+                    <li><a href="#hero" class="hover:text-violet-300 transition-colors">Create QR</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+    
+        <!-- 상단 서비스 로고 -->
+            <h1 class="
+                relative z-30 
+                pt-24 px-6
+                text-5xl sm:text-6xl
+                leading-none tracking-tight text-white
+    
+                lg:absolute lg:top-[24px] lg:left-10
+                lg:pt-0 lg:px-0
+                lg:text-7xl
+            "
+            style="font-family: 'termina', sans-serif; font-weight: 700;">
+                <span class="inline-block transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-violet-300 hover:bg-clip-text hover:text-transparent">
+                    Pet care.<br>
+                    Passport
+                </span>
+            </h1>
+    
+    
+        <!-- 히어로 콘텐츠 -->
+            <div class="relative z-20 flex items-center">
+                <div class="
+                    container mx-auto px-6 max-w-6xl 
+                    flex flex-col lg:flex-row 
+                    items-center justify-between 
+                    gap-10 lg:gap-12
             
-            <div class="lg:w-1/2 mt-16 lg:mt-0 flex justify-center reveal fade-in-up" style="transition-delay: 0.2s;">
-                <!-- 스마트폰 목업 -->
+                    pt-10 pb-20
+                    lg:min-h-screen lg:pt-24 lg:pb-0">
+    
+    
+        <!-- 히어로 내부 텍스트 -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left reveal fade-in-up order-2 lg:order-1">
+    
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-white/15 text-white text-sm font-semibold mb-5 backdrop-blur-sm">
+                        반려동물 케어의 새로운 기준
+                    </span>
+    
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6 tracking-tight">
+                        설명 없는 안심 체크인, <br>
+                        <span class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                            펫 케어 패스포트
+                        </span>
+                    </h1>
+    
+                    <p class="text-lg text-slate-200 mb-8 leading-relaxed">
+                        의료 기록부터 돌봄 일지까지 하나의 QR에 담았습니다.<br>
+                        이제 호텔이나 유치원, 미용실에 맡길 때마다 길게 설명하지 마세요.
+                    </p>
+                </div>
+    
+    
+        <!-- 스마트폰 목업 -->
+                <div class="
+                    w-full lg:w-1/2
+                    flex justify-center lg:justify-end
+                    reveal fade-in-up
+                    order-1 lg:order-2
+                    mt-16 sm:mt-20
+                    lg:mt-0">
+    
                 <div class="relative w-72 h-[600px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-900 shadow-2xl floating overflow-hidden">
                     <div class="absolute top-0 inset-x-0 h-6 bg-slate-900 rounded-b-3xl w-40 mx-auto z-20"></div>
-                    <div class="w-full h-full bg-slate-50 p-6 pt-12 relative flex flex-col items-center">
-                        <div class="w-48 h-48 bg-white rounded-3xl shadow-sm p-4 flex items-center justify-center mb-6 mt-10">
-                            <i class="fa-solid fa-qrcode text-8xl text-indigo-600"></i>
-                        </div>
-                        <h3 class="font-bold text-xl mb-1">스마트 체크인 준비 완료</h3>
-                        <p class="text-sm text-slate-500 mb-6">리더기에 스캔해주세요</p>
-                        
-                        <!-- 미니 알림 UI -->
-                        <div class="w-11/12 bg-white p-3 rounded-xl shadow-sm border border-slate-100 text-left">
-                            <div class="flex items-center gap-2 mb-1">
-                                <i class="fa-solid fa-bell text-yellow-500 text-xs"></i>
-                                <span class="text-xs font-bold text-slate-700">예방접종 알림</span>
+    
+                <div class="w-full h-full bg-slate-50 p-6 pt-12 relative flex flex-col items-center">
+                    <div class="w-48 h-48 bg-white rounded-3xl shadow-sm p-4 flex items-center justify-center mb-6 mt-10">
+                          <i class="fa-solid fa-qrcode text-8xl text-indigo-600"></i>
+                          </div>
+    
+                            <h3 class="font-bold text-xl mb-1 text-slate-800">스마트 체크인 준비 완료</h3>
+                            <p class="text-sm text-slate-500 mb-6">리더기에 스캔해주세요</p>
+    
+                            <div class="w-11/12 bg-white p-3 rounded-xl shadow-sm border border-slate-100 text-left">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-bell text-yellow-500 text-xs"></i>
+                                    <span class="text-xs font-bold text-slate-700">예방접종 알림</span>
+                                </div>
+                                <p class="text-[10px] text-slate-500">종합백신 다음 권고일이 3일 남았습니다.</p>
                             </div>
-                            <p class="text-[10px] text-slate-500">종합백신 다음 권고일이 3일 남았습니다.</p>
                         </div>
                     </div>
                 </div>
+    
             </div>
         </div>
     </section>
+    
     <!-- ========================================================================== -->
     <!-- 🟢 [A파트 조은희님 작업 공간 END] -->
     <!-- ========================================================================== -->
@@ -569,21 +694,38 @@
     <!-- 🟢 [A파트 조은희님 작업 공간 START] -->
     <!-- 담당 영역: 섹션 7 (푸터 영역) -->
     <!-- ========================================================================== -->
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t-[8px] border-indigo-600">
-        <div class="container mx-auto px-6 text-center reveal fade-in-up">
-            <h2 class="text-2xl font-bold text-white mb-2 tracking-wide">PetCare Pass</h2>
-            <p class="text-slate-500 mb-10">설명 없는 안심 체크인, 펫 케어 패스포트</p>
-            
-            <div class="inline-block px-8 py-4 bg-slate-800 border border-slate-700 rounded-2xl text-slate-300 font-medium shadow-inner">
-                🚀 <span class="text-white font-bold ml-1">오즈 코딩 스쿨 4조</span> 서비스 기획 랜딩페이지
+    
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t-[8px] border-indigo-500">
+        <div class="container mx-auto px-6 max-w-6xl reveal fade-in-up">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+                
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white mb-3 tracking-tight">Petcare Passport</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        필요한 사람에게, 필요한 정보만, 필요한 기간만.<br>
+                        반려동물 케어 정보를 안전하게 공유하는 디지털 패스포트입니다.
+                    </p>
+                </div>
+    
+                <div class="text-right md:ml-auto">
+                    <h3 class="text-white font-bold mb-3">OUR SERVICE</h3>
+                    <ul class="space-y-2">
+                        <li>Passport</li>
+                        <li>Care Record</li>
+                        <li>Reports</li>
+                        <li>Create QR</li>
+                    </ul>
+                </div>
+    
             </div>
-            
-            <p class="mt-10 text-xs text-slate-600">
-                본 페이지는 학습 과제 목적으로 제작된 포트폴리오용 랜딩페이지입니다.<br>
-                Copyright © 2026 Oz Coding School Team 4. All rights reserved.
-            </p>
+    
+            <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-slate-600">
+                <p>const OZCS = () => “1인 창업가.기획4팀”;</p>
+                <p>Copyright © 2026 Oz Coding School Team 4. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
     <!-- ========================================================================== -->
     <!-- 🟢 [A파트 조은희님 작업 공간 END] -->
     <!-- ========================================================================== -->
